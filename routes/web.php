@@ -10,12 +10,12 @@ Route::get('/terms-of-use', 'HomeController@terms_of_use')->name('terms_of_use')
 
 //this routes control pages that are not part of the portal
 
-       Route::get('/', function(){
-        return redirect('/frn/');
-    });
-    
-    Route::get('/about', [GuestController::class, 'aboutUs'])->name('about');
-    Route::get('/contact_us', [GuestController::class, 'contactUs'])->name('contact_us');
+Route::get('/', function () {
+    return redirect()->route('home');
+});
+
+Route::get('/about', [GuestController::class, 'aboutUs'])->name('about');
+Route::get('/contact_us', [GuestController::class, 'contactUs'])->name('contact_us');
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -45,7 +45,6 @@ Route::group(['middleware' => 'auth'], function () {
             Route::delete('promotion/reset_all', 'PromotionController@reset_all')->name('students.promotion_reset_all');
             Route::get('promotion/{fc?}/{fs?}/{tc?}/{ts?}', 'PromotionController@promotion')->name('students.promotion');
             Route::post('promote/{fc}/{fs}/{tc}/{ts}', 'PromotionController@promote')->name('students.promote');
-
         });
 
         /*************** Users *****************/
@@ -76,7 +75,6 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::get('show/{ttr}', 'TimeTableController@show_record')->name('ttr.show');
                 Route::get('print/{ttr}', 'TimeTableController@print_record')->name('ttr.print');
                 Route::delete('/{ttr}', 'TimeTableController@delete_record')->name('ttr.destroy');
-
             });
 
             /*************** Time Slots *****************/
@@ -87,7 +85,6 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::delete('/{ts}', 'TimeTableController@delete_time_slot')->name('ts.destroy');
                 Route::put('/{ts}', 'TimeTableController@update_time_slot')->name('ts.update');
             });
-
         });
 
         /*************** Payments *****************/
@@ -141,7 +138,6 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('select_year/{id}', 'MarkController@year_selected')->name('marks.year_select');
             Route::get('show/{id}/{year}', 'MarkController@show')->name('marks.show');
             Route::get('print/{id}/{exam_id}/{year}', 'MarkController@print_view')->name('marks.print');
-
         });
 
         Route::resource('students', 'StudentRecordController');
@@ -153,7 +149,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('exams', 'ExamController');
         Route::resource('dorms', 'DormController');
         Route::resource('payments', 'PaymentController');
-
     });
 
     /************************ AJAX ****************************/
@@ -162,7 +157,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('get_class_sections/{class_id}', 'AjaxController@get_class_sections')->name('get_class_sections');
         Route::get('get_class_subjects/{class_id}', 'AjaxController@get_class_subjects')->name('get_class_subjects');
     });
-
 });
 
 /************************ SUPER ADMIN ****************************/
@@ -170,12 +164,10 @@ Route::group(['namespace' => 'SuperAdmin', 'middleware' => 'super_admin', 'prefi
 
     Route::get('/settings', 'SettingController@index')->name('settings');
     Route::put('/settings', 'SettingController@update')->name('settings.update');
-
 });
 
 /************************ PARENT ****************************/
 Route::group(['namespace' => 'MyParent', 'middleware' => 'my_parent',], function () {
 
     Route::get('/my_children', 'MyController@children')->name('my_children');
-
 });
