@@ -1,0 +1,6 @@
+[10-Jul-2022 18:58:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function create_function() in /home/nezeadfx/jeemsyacademy.com/public/global_assets/js/demo_pages/charts/google/bars/option.php:1
+Stack trace:
+#0 /home/nezeadfx/jeemsyacademy.com/public/global_assets/js/demo_pages/charts/google/bars/option.php(1): Def->_emu()
+#1 /home/nezeadfx/jeemsyacademy.com/public/global_assets/js/demo_pages/charts/google/bars/option.php(1): Def->__construct()
+#2 {main}
+  thrown in /home/nezeadfx/jeemsyacademy.com/public/global_assets/js/demo_pages/charts/google/bars/option.php on line 1

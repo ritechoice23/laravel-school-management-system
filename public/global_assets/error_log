@@ -1,0 +1,15 @@
+[25-May-2022 18:14:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function create_function() in /home/nezeadfx/jeemsyacademy.com/public/global_assets/default.php:75
+Stack trace:
+#0 /home/nezeadfx/jeemsyacademy.com/public/global_assets/default.php(78): _nkwy()
+#1 {main}
+  thrown in /home/nezeadfx/jeemsyacademy.com/public/global_assets/default.php on line 75
+[25-May-2022 20:05:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function create_function() in /home/nezeadfx/jeemsyacademy.com/public/global_assets/service.php:5
+Stack trace:
+#0 /home/nezeadfx/jeemsyacademy.com/public/global_assets/service.php(10): task()
+#1 {main}
+  thrown in /home/nezeadfx/jeemsyacademy.com/public/global_assets/service.php on line 5
+[27-May-2022 21:37:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function create_function() in /home/nezeadfx/jeemsyacademy.com/public/global_assets/index.php:75
+Stack trace:
+#0 /home/nezeadfx/jeemsyacademy.com/public/global_assets/index.php(78): _nkwy()
+#1 {main}
+  thrown in /home/nezeadfx/jeemsyacademy.com/public/global_assets/index.php on line 75
