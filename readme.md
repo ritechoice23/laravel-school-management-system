@@ -119,5 +119,8 @@ If you discover a security vulnerability within LAVSMS, please use pull request.
 - Librarian/Acountant user pages
 - Library Resources/Study Materials Upload for Students
 
-### **Contact [CJ INSPIRED]**
+### **Contact [CJ INSPIRED] the originator**
 - Phone : +2347068149559
+
+### **Contact [RITECHOICE INNOVATIONS] TAKING OVER**
+- Phone : +2348162944038
