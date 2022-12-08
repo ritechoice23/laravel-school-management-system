@@ -11,7 +11,7 @@
     @foreach($exams as $ex)
         @foreach($exam_records->where('exam_id', $ex->id) as $exr)
 
-            @if(Qs::userIsTeamSA())
+            @if(Qs::userIsTeamSA() || Qs::userIsParent())
                 <div class="card">
                     <div class="card-header header-elements-inline">
                         <h6 class="font-weight-bold">{{ $ex->name.' - '.$ex->year }}</h6>
@@ -33,12 +33,13 @@
                 </div>
             @endif
 
+            @if(Qs::userIsTeamSA())
             {{--    EXAM COMMENTS   --}}
             @include('pages.support_team.marks.show.comments')
 
             {{-- SKILL RATING --}}
             @include('pages.support_team.marks.show.skills')
-
+      @endif
         @endforeach
     @endforeach
 
